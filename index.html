@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabTrack — История анализов в одном месте</title>
+  <meta name="description" content="Импортируйте анализы, смотрите динамику, делитесь отчётом. Современный интерфейс, приватность по умолчанию.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .container { max-width: 1160px; }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <img src="./assets/blob1.svg" class="absolute -top-24 -left-24 w-[42rem] opacity-70" alt=""/>
+    <img src="./assets/blob2.svg" class="absolute -bottom-32 -right-16 w-[36rem] opacity-70" alt=""/>
+  </div>
+
+  <header class="sticky top-0 z-40 glass border-b border-slate-200/70">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3">
+        <img src="./assets/logo.svg" alt="LabTrack" class="h-8 w-auto">
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#how" class="hover:text-sky-700">Как работает</a>
+        <a href="#features" class="hover:text-sky-700">Функции</a>
+        <a href="#pricing" class="hover:text-sky-700">Тарифы</a>
+        <a href="#faq" class="hover:text-sky-700">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#" class="hidden sm:inline-flex px-4 py-2 text-sm font-medium rounded-xl border border-slate-300 hover:bg-white">Войти</a>
+        <a href="#cta" class="inline-flex px-4 py-2 text-sm font-semibold rounded-xl bg-slate-900 text-white hover:bg-slate-800">Попробовать</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero" class="relative">
+    <div class="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-sky-800 bg-sky-100/80 rounded-full px-3 py-1 border border-sky-200">Private Beta</span>
+        <h1 class="mt-4 text-5xl font-extrabold leading-tight">
+          История анализов <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-indigo-600">в одном месте</span>
+        </h1>
+        <p class="mt-4 text-lg text-slate-700">
+          Импортируйте результаты из разных клиник, смотрите динамику показателей и делитесь PDF-отчётом с врачом. Приватность по умолчанию.
+        </p>
+        <form class="mt-6 flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Спасибо! Мы сообщим о доступе.');">
+          <input type="email" required placeholder="Email для раннего доступа" class="w-full sm:w-80 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 bg-white/80">
+          <button class="px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700 shadow-sm">
+            Получить доступ
+          </button>
+        </form>
+        <div class="mt-5 flex items-center gap-4 text-sm text-slate-600">
+          <div class="flex -space-x-2">
+            <span class="inline-flex h-9 w-9 rounded-full bg-slate-200"></span>
+            <span class="inline-flex h-9 w-9 rounded-full bg-slate-300"></span>
+            <span class="inline-flex h-9 w-9 rounded-full bg-slate-400"></span>
+          </div>
+          <span>50+ ранних пользователей</span>
+        </div>
+        <div class="mt-4 grid grid-cols-3 gap-3 max-w-sm">
+          <div class="glass border border-white/60 rounded-xl px-3 py-2 text-xs flex items-center gap-2 shadow-sm">
+            <img src="./assets/icon-upload.svg" class="h-6 w-6" alt="">
+            Импорт PDF/JPEG
+          </div>
+          <div class="glass border border-white/60 rounded-xl px-3 py-2 text-xs flex items-center gap-2 shadow-sm">
+            <img src="./assets/icon-chart.svg" class="h-6 w-6" alt="">
+            Динамика
+          </div>
+          <div class="glass border border-white/60 rounded-xl px-3 py-2 text-xs flex items-center gap-2 shadow-sm">
+            <img src="./assets/icon-shield.svg" class="h-6 w-6" alt="">
+            Защита данных
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl border border-white/70 shadow-xl bg-white/80 backdrop-blur p-3 ring-1 ring-black/5">
+          <img src="./assets/dashboard-mock.svg" alt="Dashboard mockup" class="w-full rounded-2xl">
+        </div>
+        <div class="absolute -bottom-10 -right-8 w-44 md:w-64 rounded-2xl border border-white/60 bg-white/90 backdrop-blur p-2 shadow-lg rotate-2">
+          <img src="./assets/chart-mock.svg" alt="Chart mockup" class="rounded-xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold">Как это работает</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl border bg-white/70 backdrop-blur">
+          <img src="./assets/icon-upload.svg" class="h-10 w-10" alt="">
+          <h3 class="mt-3 font-semibold">Загрузите анализы</h3>
+          <p class="mt-2 text-slate-700">PDF/JPEG из личных кабинетов клиник. Можно добавить вручную.</p>
+        </div>
+        <div class="p-6 rounded-2xl border bg-white/70 backdrop-blur">
+          <img src="./assets/icon-chart.svg" class="h-10 w-10" alt="">
+          <h3 class="mt-3 font-semibold">Приводим к формату</h3>
+          <p class="mt-2 text-slate-700">OCR + парсинг, единицы измерения и референсы — в одной таблице.</p>
+        </div>
+        <div class="p-6 rounded-2xl border bg-white/70 backdrop-blur">
+          <img src="./assets/icon-shield.svg" class="h-10 w-10" alt="">
+          <h3 class="mt-3 font-semibold">Визуализация и приватность</h3>
+          <p class="mt-2 text-slate-700">Графики динамики, подсветка норм, экспорт PDF для врача.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold">Функции MVP</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <h3 class="font-semibold">Единая таблица показателей</h3>
+          <p class="mt-2 text-slate-700">Показатель · Значение · Единицы · Референс · Дата. Поиск и фильтры.</p>
+        </div>
+        <div class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <h3 class="font-semibold">Графики динамики</h3>
+          <p class="mt-2 text-slate-700">ALT, AST, билирубин, липиды, глюкоза, HbA1c — всё на одной временной шкале.</p>
+        </div>
+        <div class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <h3 class="font-semibold">Импорт PDF/JPEG</h3>
+          <p class="mt-2 text-slate-700">Парсинг текстовых результатов и сканов, ручной ввод для редких случаев.</p>
+        </div>
+        <div class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <h3 class="font-semibold">Экспорт PDF для врача</h3>
+          <p class="mt-2 text-slate-700">Чистый отчёт с таблицей и графиками, QR-ссылка на ваш кабинет.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold">Тарифы</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <div class="text-sm font-semibold text-slate-600">Бесплатно</div>
+          <div class="mt-2 text-3xl font-extrabold">0₽</div>
+          <ul class="mt-4 space-y-2 text-slate-700 text-sm">
+            <li>• До 10 загруженных анализов</li>
+            <li>• Таблица показателей</li>
+            <li>• 1 график динамики</li>
+          </ul>
+          <a href="#cta" class="mt-6 inline-flex px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold">Начать</a>
+        </div>
+        <div class="p-6 rounded-2xl border-2 border-sky-500 bg-white shadow-md">
+          <div class="text-sm font-semibold text-sky-700">Стандарт</div>
+          <div class="mt-2 text-3xl font-extrabold">199₽/мес</div>
+          <ul class="mt-4 space-y-2 text-slate-700 text-sm">
+            <li>• Безлимитное хранение</li>
+            <li>• Все графики динамики</li>
+            <li>• Экспорт PDF для врача</li>
+          </ul>
+          <a href="#cta" class="mt-6 inline-flex px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold">Выбрать</a>
+        </div>
+        <div class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <div class="text-sm font-semibold text-slate-600">Премиум</div>
+          <div class="mt-2 text-3xl font-extrabold">499₽/мес</div>
+          <ul class="mt-4 space-y-2 text-slate-700 text-sm">
+            <li>• Совместный доступ врачу</li>
+            <li>• Напоминания о повторных анализах</li>
+            <li>• Приоритетная поддержка</li>
+          </ul>
+          <a href="#cta" class="mt-6 inline-flex px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold">Выбрать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold">FAQ</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <details class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <summary class="cursor-pointer font-semibold">Насколько это безопасно?</summary>
+          <p class="mt-3 text-slate-700">Локальное шифрование и изолированное хранение. Вы полностью контролируете доступ.</p>
+        </details>
+        <details class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <summary class="cursor-pointer font-semibold">Можно ли импортировать из клиник?</summary>
+          <p class="mt-3 text-slate-700">В MVP — загрузка PDF/JPEG. Позже добавим прямые интеграции.</p>
+        </details>
+        <details class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <summary class="cursor-pointer font-semibold">Подходит ли спортсменам?</summary>
+          <p class="mt-3 text-slate-700">Да. Удобно отслеживать маркеры восстановления, печени, липиды и т.д.</p>
+        </details>
+        <details class="p-6 rounded-2xl border bg-white/80 backdrop-blur">
+          <summary class="cursor-pointer font-semibold">Будет ли семейный доступ?</summary>
+          <p class="mt-3 text-slate-700">Запланированы семейные аккаунты и профили питомцев.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-slate-200 bg-white/80 backdrop-blur">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="./assets/logo.svg" alt="LabTrack" class="h-6 w-auto">
+        <span class="text-sm text-slate-600">© 2025 LabTrack. Все права защищены.</span>
+      </div>
+      <div class="text-sm text-slate-600">
+        <a href="#" class="hover:text-sky-700">Политика конфиденциальности</a>
+        <span class="mx-3">·</span>
+        <a href="#" class="hover:text-sky-700">Условия использования</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
